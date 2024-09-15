@@ -4,3 +4,4 @@ colorama==0.4.6
 onlylog==1.0.1
 Flask
 websockets
+loguru
