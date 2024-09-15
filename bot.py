@@ -14,6 +14,7 @@ from colorama import Fore, Style
 from onlylog import Log
 from requests.exceptions import Timeout, ConnectionError
 from keep_alive import keep_alive
+from flask import Flask
 
 keep_alive()
 # Flask application
