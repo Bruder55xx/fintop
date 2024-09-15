@@ -14,9 +14,11 @@ from colorama import Fore, Style
 from onlylog import Log
 from requests.exceptions import Timeout, ConnectionError
 from keep_alive import keep_alive
+import websockets
+from loguru import logger
 from flask import Flask
 
-keep_alive()
+
 # Flask application
 app = Flask(__name__)
 
@@ -26,6 +28,7 @@ def index():
 
 def run_flask():
     app.run(debug=True)
+    
 # Global API and Headers Configuration
 API_BASE_URL = "https://fintopio-tg.fintopio.com/api"
 HEADERS = {
@@ -335,6 +338,7 @@ def sleep(total_seconds):
 if __name__ == "__main__":
     try:
         banner()
+        keep_alive()
         run_bot()
     except KeyboardInterrupt:
         sys.exit()
