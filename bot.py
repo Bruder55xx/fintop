@@ -13,7 +13,18 @@ from pyfiglet import Figlet
 from colorama import Fore, Style
 from onlylog import Log
 from requests.exceptions import Timeout, ConnectionError
+from keep_alive import keep_alive
 
+keep_alive()
+# Flask application
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return "Hello World!"
+
+def run_flask():
+    app.run(debug=True)
 # Global API and Headers Configuration
 API_BASE_URL = "https://fintopio-tg.fintopio.com/api"
 HEADERS = {
